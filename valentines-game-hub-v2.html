@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>💙 Valentine's Game Hub 💜</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stars"></div>
+<div id="fhearts"></div>
+
+<!-- Pixel Scene at Bottom -->
+<!-- <div id="pixel-scene">
+  <div class="grass"></div>
+  <div class="ground"></div>
+  <div id="pixel-chars"></div>
+  <div class="house" id="pixel-house"></div>
+</div> -->
+
+<div id="app">
+
+<!-- ══════════════════════════════════════
+     WELCOME / LANDING
+══════════════════════════════════════ -->
+<div id="s-welcome" class="screen active">
+  <div class="panel">
+    <div class="welcome-hero">
+      <span class="hero-heart">♥</span>
+      <div class="badge v">Valentine's Day 2026</div>
+      <h1 class="title">Love Circuit<br>Game Hub</h1>
+      <p class="subtitle">For My Engineer Alfaro</p>
+    </div>
+    
+    <p class="love-msg">
+      "In the vast circuit of life,<br>
+      you are the component that completes me."
+    </p>
+    
+    <div class="divider"></div>
+    
+    <div class="feature-grid">
+      <div class="feature">
+        <span class="feature-icon" style="color:var(--blue)">⚡</span>
+        <div class="feature-text">ECE-Themed<br>Puzzles</div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon" style="color:var(--vio)">♥</span>
+        <div class="feature-text">3 Unique<br>Mini-Games</div>
+      </div>
+      <div class="feature">
+        <span class="feature-icon" style="color:var(--pink)">✦</span>
+        <div class="feature-text">Made With<br>Love</div>
+      </div>
+    </div>
+    
+    <div style="text-align:center;margin-top:2rem">
+      <button class="btn lg p" onclick="enterHub()">
+        <span style="font-size:1.2rem">♥</span>
+        Enter Game Hub
+        <span style="font-size:1.2rem">♥</span>
+      </button>
+    </div>
+    
+    <p style="margin-top:1.5rem;font-size:.75rem;opacity:.7">
+      From your favorite gym buddy 🏋️, basketball partner 🏀,<br>
+      and Minecraft adventurer ⛏️ — Happy Valentine's Day! 💙
+    </p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     HUB
+══════════════════════════════════════ -->
+<div id="s-hub" class="screen">
+  <div class="panel" style="text-align:center;margin-bottom:1rem">
+    <div class="badge">Game Selection</div>
+    <h1 class="title">Choose Your<br>Adventure</h1>
+    <p class="subtitle">3 Ways to Show My Love</p>
+  </div>
+
+  <div class="game-grid">
+    <div class="gcard" onclick="launch('a')">
+      <div class="gcard-num">GAME 01</div>
+      <div class="gcard-top">
+        <div class="gcard-ico">⚡</div>
+        <div>
+          <div class="gcard-name">Circuit Connect</div>
+          <div class="gcard-desc">Wire the pathways to power our love</div>
+        </div>
+      </div>
+      <div class="gcard-tags">
+        <span class="tag">ECE Puzzle</span>
+        <span class="tag">3 Rounds</span>
+        <span class="tag">Logic</span>
+      </div>
+      <div class="gcard-bar"></div>
+    </div>
+
+    <div class="gcard" onclick="launch('b')">
+      <div class="gcard-num">GAME 02</div>
+      <div class="gcard-top">
+        <div class="gcard-ico">⛏</div>
+        <div>
+          <div class="gcard-name">Heart Collector</div>
+          <div class="gcard-desc">Catch falling hearts in pixel style</div>
+        </div>
+      </div>
+      <div class="gcard-tags">
+        <span class="tag">Arcade</span>
+        <span class="tag">Reflex</span>
+        <span class="tag">Minecraft</span>
+      </div>
+      <div class="gcard-bar"></div>
+    </div>
+
+    <div class="gcard" onclick="launch('c')">
+      <div class="gcard-num">GAME 03</div>
+      <div class="gcard-top">
+        <div class="gcard-ico">◉</div>
+        <div>
+          <div class="gcard-name">Memory Match</div>
+          <div class="gcard-desc">Pair ECE symbols and Valentine icons</div>
+        </div>
+      </div>
+      <div class="gcard-tags">
+        <span class="tag">Memory</span>
+        <span class="tag">Card Flip</span>
+        <span class="tag">Brain</span>
+      </div>
+      <div class="gcard-bar"></div>
+    </div>
+  </div>
+  
+  <div class="back-row">
+    <button class="btn sm v" onclick="goWelcome()">← Back</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     GAME A — CIRCUIT
+══════════════════════════════════════ -->
+<div id="s-a" class="screen">
+<div class="panel">
+  <div style="text-align:center"><div class="badge">GAME 01 — Circuit Puzzle</div></div>
+  <div class="rdots">
+    <div class="rdot cur" id="rd0"></div>
+    <div class="rdot" id="rd1"></div>
+    <div class="rdot" id="rd2"></div>
+  </div>
+  <div id="ca-rtitle" style="text-align:center;color:var(--blue-l);font-size:.85rem;font-weight:700;letter-spacing:1.3px;margin-bottom:.4rem"></div>
+  <div class="vbar-wrap"><div class="vbar-fill" id="ca-vf"></div><div class="vbar-lbl" id="ca-vl">0% ⚡</div></div>
+  <div class="stats">
+    <div class="stat"><b id="ca-sc">0</b>Score</div>
+    <div class="stat"><b id="ca-ok">0</b>Connected</div>
+    <div class="stat"><b id="ca-er">0</b>Errors</div>
+  </div>
+  <div class="instr" id="ca-ins"></div>
+  <div id="ca-board" style="margin:.5rem 0"></div>
+  <div style="font-size:.68rem;color:var(--dim);text-align:center;letter-spacing:1px;text-transform:uppercase;margin-top:.8rem;font-weight:600">Wire Tray — Pick & Click Slot</div>
+  <div class="wtray" id="ca-tray"></div>
+  <div class="fb" id="ca-fb"></div>
+  <div class="back-row">
+    <button class="btn sm" onclick="goHub()">← Hub</button>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════
+     GAME B — CATCHER
+══════════════════════════════════════ -->
+<div id="s-b" class="screen">
+<div class="panel">
+  <div style="text-align:center"><div class="badge">GAME 02 — Heart Collector</div></div>
+  <div class="stats">
+    <div class="stat"><b id="cb-sc">0</b>Score</div>
+    <div class="stat"><b id="cb-ht">0</b>Caught</div>
+    <div class="stat"><b id="cb-lv">1</b>Level</div>
+  </div>
+  <div class="lives" id="cb-lives"></div>
+  <canvas id="cb-canvas" width="520" height="360"></canvas>
+  <div class="thint">📱 Touch/Drag · 🖱️ Mouse · ⌨️ Arrow Keys</div>
+  <div class="stats" style="margin-top:.6rem">
+    <div class="stat"><b id="cb-bl">0</b>Blue ♥</div>
+    <div class="stat"><b id="cb-vi">0</b>Violet ♥</div>
+    <div class="stat"><b id="cb-pk">0</b>Pink ♥</div>
+  </div>
+  <div class="back-row">
+    <button class="btn sm" onclick="goHub()">← Hub</button>
+    <button class="btn sm v" id="cb-rbtn" onclick="cbInit()" style="display:none">↺ Restart</button>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════
+     GAME C — MEMORY
+══════════════════════════════════════ -->
+<div id="s-c" class="screen">
+<div class="panel">
+  <div style="text-align:center"><div class="badge">GAME 03 — Memory Match</div></div>
+  <div class="stats">
+    <div class="stat"><b id="cm-mv">0</b>Moves</div>
+    <div class="stat"><b id="cm-pr">0</b>/<b id="cm-tt">8</b> Pairs</div>
+    <div class="stat"><b id="cm-tm">0s</b>Time</div>
+  </div>
+  <div style="text-align:center;margin-bottom:.4rem">
+    <div style="font-size:.68rem;color:var(--dim);letter-spacing:1.2px;margin-bottom:.5rem;font-weight:600">DIFFICULTY</div>
+    <div class="diff-row">
+      <div class="dbtn on" id="d-easy" onclick="setDiff('easy')">Easy (4×4)</div>
+      <div class="dbtn" id="d-hard" onclick="setDiff('hard')">Hard (5×4)</div>
+    </div>
+  </div>
+  <div id="cm-grid"></div>
+  <div class="fb" id="cm-fb"></div>
+  <div class="back-row">
+    <button class="btn sm" onclick="goHub()">← Hub</button>
+    <button class="btn sm v" onclick="cmInit()">↺ Restart</button>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════
+     WIN
+══════════════════════════════════════ -->
+<div id="s-win" class="screen">
+<div class="panel" style="text-align:center">
+  <div class="badge p" id="win-badge">Complete! ♥</div>
+  <span class="big-heart">♥</span>
+  <h1 class="title" id="win-title">You Complete<br>My Circuit</h1>
+  <div><div class="win-score">
+    <div class="sv" id="win-sv">0</div>
+    <div class="sl" id="win-sl">POINTS</div>
+  </div></div>
+  <div class="divider"></div>
+  <div class="win-msg" id="win-msg">Happy Valentine's Day, my love!</div>
+  <div class="back-row">
+    <button class="btn" onclick="goHub()">← Game Hub</button>
+    <button class="btn v" id="win-again">↺ Play Again</button>
+  </div>
+</div>
+</div>
+
+</div><!-- /app -->
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -607,3 +607,47 @@ p{color:var(--dim2);font-size:.85rem;text-align:center;line-height:1.75;margin:.
 @media(min-width:768px){
   .game-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 }
+
+
+/* ═══════════════════════════════════════════
+   CYBER-CUTE FOOTER (THEME ALIGNED)
+═══════════════════════════════════════════ */
+/* ═══════════════════════════════════════════
+   MINIMAL THEME FOOTER
+═══════════════════════════════════════════ */
+.valentine-footer {
+    padding: 20px 10px;
+    text-align: center;
+    border-top: 1px solid rgba(144, 164, 174, 0.1); /* Very faint line */
+    margin-top: 40px;
+    font-family: var(--font);
+    opacity: 0.5; /* Makes it blend into the background */
+    transition: opacity 0.3s ease;
+}
+
+/* Lights up slightly when you hover over it */
+.valentine-footer:hover {
+    opacity: 0.8;
+}
+
+.love-text {
+    color: var(--dim2);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.floating-heart {
+    color: var(--pink);
+    font-size: 0.8rem;
+    margin: 0 4px;
+    display: inline-block;
+}
+
+.social-mini {
+    color: var(--dim);
+    font-size: 0.6rem;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

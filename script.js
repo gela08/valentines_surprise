@@ -1,5 +1,5 @@
 // ╔══════════════════════════════════════════════════════╗
-// ║       VALENTINE'S ECE GAME HUB — V3 SCRIPT          ║
+// ║       VALENTINE'S EE GAME HUB — V3 SCRIPT          ║
 // ╚══════════════════════════════════════════════════════╝
 
 const $=id=>document.getElementById(id);
@@ -243,25 +243,24 @@ const WINS={
      msg:`Happy Valentine's Day, my love! ♥<br><br>
 Just like a completed circuit lights up — <strong>you light up my entire world</strong>.
 Being with you feels like finding the missing component that makes everything work perfectly.
-I love your brilliant ECE mind, your strength at the gym, your moves on the court,
+I love your sexy and intelligent mind, your passion for learning, your non-stop curiosity and study session,
 and the way you explore every world — even pixelated ones.<br><br>
 <strong>You're my favorite frequency. ⚡</strong>`,sl:'LOVE VOLTAGE'},
   b:{title:'Hearts Collected!',
      msg:`Catching hearts is easy when they remind me of you ♥<br><br>
 Every heart you collected is one more reason I love you.
 You catch everything in life with the same dedication —
-a basketball, a dumbbell, or my heart.<br><br>
-<strong>You always catch me when I fall. ♥</strong>`,sl:'HEARTS CAUGHT'},
+me when I'm happy, me when I'm sad, or my heart.<br><br>
+<strong>You always catch me when I fall and always accept me with open arms. ♥</strong>`,sl:'HEARTS CAUGHT'},
   c:{title:'Perfect Match!',
      msg:`You matched them all — just like we matched. ♥<br><br>
 Of all the components in this world,
 you are the one I always want to be paired with.
 Our love is the best circuit — <strong>you're my perfect match</strong>. ⚡<br><br>
-Happy Valentine's Day, my ECE engineer. I love you. ♥`,sl:'PAIRS MATCHED'}
+Happy Valentine's Day, my EE engineer. I love you, Engr Alfaro. ♥`,sl:'PAIRS MATCHED'}
 };
 
 function showWin(g,val){
-  drawAll();
   const w=WINS[g]||WINS.a;
   $('win-title').innerHTML=w.title;
   $('win-msg').innerHTML=w.msg;
@@ -600,7 +599,7 @@ function cbEndGame(){
 // ║  GAME C — MEMORY MATCH (FIXED 3D FLIP)             ║
 // ╚══════════════════════════════════════════════════════╝
 
-// All symbol pairs — ECE + Valentine themed
+// All symbol pairs — EE + Valentine themed
 const CM_SYMS=[
   '⚡','🔌','💡','🔋','📻','⚙️','🔧','🧲',
   '❤️','💙','💜','💗','💘','💕','🌹','✨',
